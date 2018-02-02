@@ -55,7 +55,8 @@ ROOT_URLCONF = 'tango_with_django_project.urls'
 TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 STATIC_DIR = os.path.join(BASE_DIR, 'static')
 MEDIA_DIR = os.path.join(BASE_DIR, 'media')
-
+LOGIN_URL = '/rango/login/'
+SESSIOMN_EXPIRE_AT_BROWSER_CLOSE = True
 
 MEDIA_ROOT = MEDIA_DIR
 MEDIA_URL = '/media/'
