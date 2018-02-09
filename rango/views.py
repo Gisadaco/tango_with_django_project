@@ -193,9 +193,9 @@ def user_login(request):
         else:
             user = User.objects.filter(username = username)
             if user:
-                context_dict = {'error_message' : "Invalid password"}
+                context_dict = {'error_message' : "Invalid login details supplied. Invalid password"}
             else:
-                context_dict = {'error_message' : "Invalid username"}
+                context_dict = {'error_message' : "Invalid login details supplied. Invalid username"}
             #Bad login details were provided. So we can't log the user in.
             print("Invalid login details: {0}, {1}".format(username, password))
             #print(<a href="{% url 'index' %}">Return to the homepage.</a><br />)
@@ -238,7 +238,7 @@ def visitor_cookie_handler(request):
         #update the last visit cookie now that we have updated the count
         request.session['last_visit'] = str(datetime.now())
     else:
-        visits = 1
+        ##visits = 1
         # set the last visit cookie
         request.session['last_visit'] = last_visit_cookie
     # Update/set the visits cookie

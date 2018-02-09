@@ -8,6 +8,7 @@
 {% block body_block %}
 	{% if user.is_authenticated %}
 		<strong>Restricted View</strong>
+		Since you're logged in, you can see this text!
 		<a href="{% url 'index' %}">Return to the homepage.</a><br />
 	{% else %}
 		Rango says: <strong>register here!</strong><br />
